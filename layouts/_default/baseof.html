@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ block "title" . }}
-      {{ .Site.Title }}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ block "title" . }}
+    
     {{ end }}</title>
 
-    
-    {{ template "imports.html" . }}
-  </head>
-  <body>
 
-      <h3>header</h3>
+  {{ template "imports.html" . }}
+</head>
 
-      
-<div class="topnav" id="myTopnav">
+<body>
+
+  <h1>{{ .Site.Title }}</h1>
+
+
+  <div class="topnav" id="myTopnav">
     <a href="/" class="active">Home</a>
     <a href="/contact">Contact</a>
     <a href="/about">About</a>
@@ -23,10 +25,11 @@
     </a>
   </div>
 
-    {{ block "main" . }}
-      <!-- The part of the page that begins to differ between templates -->
-    {{ end }}
-    
-    <h3>footer</h3>
-  </body>
+  {{ block "main" . }}
+  <!-- The part of the page that begins to differ between templates -->
+  {{ end }}
+
+  <p style="color: blue;">{{ .Site.Params.department }}</p>
+</body>
+
 </html>
